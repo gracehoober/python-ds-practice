@@ -21,3 +21,17 @@ def is_palindrome(phrase):
         >>> is_palindrome('Noon')
         True
     """
+
+    phrase = [char for char in phrase if not char == ' ']
+    left = 0
+    right = len(phrase) - 1
+
+
+    while left < right:
+        if not phrase[left].lower() == phrase[right].lower():
+            return False
+        else:
+            left += 1
+            right -= 1
+
+    return True
